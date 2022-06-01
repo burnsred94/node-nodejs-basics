@@ -1,3 +1,13 @@
+import fs from 'fs'
+
 export const read = async () => {
-    // Write your code here 
+    fs.readFile('files/fileToRead.txt', (err, data)=>{
+        if(err){
+            throw new Error('FS operation filed')
+        }else{
+            console.log(data.toString())
+        }
+    })
 };
+
+read()

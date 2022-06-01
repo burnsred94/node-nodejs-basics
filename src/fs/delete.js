@@ -1,3 +1,11 @@
+import fs from 'fs';
+
 export const remove = async () => {
-    // Write your code here 
+    fs.rm('files/fileToRemove.txt',(err)=>{
+        if(err){
+            throw new Error('FS operation filed')
+        }
+    })
 };
+
+remove()
